@@ -1158,7 +1158,8 @@ class PixivAppAPI():
             self.log.debug(data)
 
             if response.status_code == 404:
-                raise exception.NotFoundError()
+                print("NotFoundError, But Ignore...")
+                # raise exception.NotFoundError()
 
             error = data["error"]
             if "rate limit" in (error.get("message") or "").lower():
